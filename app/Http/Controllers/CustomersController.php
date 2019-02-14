@@ -24,8 +24,10 @@ class CustomersController extends Controller
 
     public function update(Request $request , $id) {
     	$customers = Customers::findOrFail($id);
-    	$customers->update($request->all());
-
+        $updateRequest = $request->all();
+        $updateRequest['start_date'] = date('Y-m-d H:i:s',strtotime($updateRequest["start_date"]));
+        $updateRequest['end_date'] = date('Y-m-d H:i:s',strtotime($updateRequest["end_date"]));
+        $customers->update($updateRequest);
     	return $customers;
     }
     
