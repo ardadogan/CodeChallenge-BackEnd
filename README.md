@@ -8,7 +8,7 @@
 # install composer
 composer update --no-scripts
 
-# Çalışacağı adres: localhost:8080
+# Çalışacağı adres: localhost:8000
 php artisan serve
 
 ```
